@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>West Bengal Tourism - Tour My India</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .main-nav li {
+            margin-left: 20px;
+        }
+        
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .main-nav a:hover {
+            color: #ff6b00;
+        }
+        
+        /* Hero section */
+        .hero {
+            height: 500px;
+            background-image: url('/Major\ Project/images/victoria.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b00;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #e55e00;
+        }
+        
+        /* Main content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-heading h2 {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .section-heading p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        /* About section */
+        .about-section {
+            margin-bottom: 60px;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .about-content p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        /* Destinations section */
+        .destinations-section {
+            margin-bottom: 60px;
+        }
+        
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .destination-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .destination-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .card-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: #ff6b00;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        /* Culture section */
+        .culture-section {
+            margin-bottom: 60px;
+            background-color: #f0f5f9;
+            padding: 50px 20px;
+        }
+        
+        .culture-section .container {
+            padding: 0;
+        }
+        
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .culture-item {
+            display: flex;
+            align-items: flex-start;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .culture-item i {
+            font-size: 2rem;
+            color: #ff6b00;
+            margin-right: 20px;
+        }
+        
+        .culture-text h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .culture-text p {
+            color: #666;
+        }
+        
+        /* Travel tips section */
+        .travel-tips {
+            margin-bottom: 60px;
+        }
+        
+        .tips-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .tip-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .tip-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .tip-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .tip-item p {
+            color: #666;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            text-decoration: none;
+            color: #aaa;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: #ff6b00;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .about-grid,
+            .culture-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .main-nav {
+                margin-top: 15px;
+            }
+            
+            .main-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .main-nav li {
+                margin: 5px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#"><img src="/Major Project/images/My logo.png" alt="Tour My India Logo"></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#destination">Destinations</a></li>
+                    <!-- <li><a href="#">Tours</a></li> -->
+                    <li><a href="#culture">Culture</a></li>
+                    <li><a href="#tips">Travel Tips</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Discover West Bengal</h1>
+            <p>Land of cultural heritage, magnificent Himalayas, serene beaches, and the mighty Sundarbans</p>
+            <a href="#" class="cta-button">Explore Packages</a>
+        </div>
+    </section>
+
+    <!-- About West Bengal Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>About West Bengal</h2>
+                <p>Experience the cultural capital of India with its rich heritage and diverse landscapes</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="/Major Project/images/victoria.png" alt="West Bengal Landscape">
+                </div>
+                <div class="about-content">
+                    <h3>The Cultural Heart of India</h3>
+                    <p>West Bengal, located in Eastern India, is a state blessed with natural splendor and cultural richness. From the snow-capped Himalayas in the north to the Bay of Bengal in the south, this state offers diverse experiences to travelers.</p>
+                    <p>Kolkata (formerly Calcutta), the capital city, is known as the cultural capital of India. The state boasts a rich heritage of art, literature, music, and cinema, owing much to the Bengal Renaissance of the 19th century.</p>
+                    <p>With its delectable cuisine, vibrant festivals, magnificent architecture, picturesque hill stations, and pristine beaches, West Bengal promises an unforgettable journey through the heart of Bengali culture and tradition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Destinations Section -->
+    <section class="destinations-section" id="destination">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Top Destinations</h2>
+                <p>Explore the most beautiful and culturally significant places of West Bengal</p>
+            </div>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="/Major Project/images/victoria.png" alt="Kolkata">
+                    </div>
+                    <div class="card-content">
+                        <h3>Kolkata</h3>
+                        <p>The cultural capital of India with magnificent colonial architecture, museums, and the iconic Howrah Bridge.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="/Major Project/images/darjeeling.png" alt="Darjeeling">
+                    </div>
+                    <div class="card-content">
+                        <h3>Darjeeling</h3>
+                        <p>Famous hill station with breathtaking views of the Himalayas, tea plantations, and the historic toy train.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="/Major Project/images/sundarbans.png" alt="Sundarbans">
+                    </div>
+                    <div class="card-content">
+                        <h3>Sundarbans</h3>
+                        <p>World's largest mangrove forest and home to the Royal Bengal Tiger, offering unique wildlife experiences.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="/Major Project/images/digha.png" alt="Digha">
+                    </div>
+                    <div class="card-content">
+                        <h3>Digha</h3>
+                        <p>The most popular sea beach of West Bengal with golden sands and clear blue waters.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="/Major Project/images/shantiniketan.png" alt="Shantiniketan">
+                    </div>
+                    <div class="card-content">
+                        <h3>Shantiniketan</h3>
+                        <p>Rabindranath Tagore's abode of peace, known for Visva-Bharati University and cultural festivals.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="/Major Project/images/murshidabad.png" alt="Murshidabad">
+                    </div>
+                    <div class="card-content">
+                        <h3>Murshidabad</h3>
+                        <p>Historic city with magnificent palaces, mosques, and the legacy of the Nawabs of Bengal.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="culture-section" id="culture">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Culture & Heritage</h2>
+                <p>Discover the rich cultural tapestry that makes West Bengal unique</p>
+            </div>
+            <div class="culture-grid">
+                <div class="culture-item">
+                    <i>🎭</i>
+                    <div class="culture-text">
+                        <h3>Arts & Literature</h3>
+                        <p>Home to Nobel laureate Rabindranath Tagore and countless literary giants, West Bengal has been the epicenter of art, literature, and intellectual discourse in India.</p>
+                    </div>
+                </div>
+                <div class="culture-item">
+                    <i>🎊</i>
+                    <div class="culture-text">
+                        <h3>Festivals</h3>
+                        <p>Experience the grandeur of Durga Puja, the biggest festival of Bengal, along with other colorful celebrations like Poush Mela, Gangasagar Mela, and many more.</p>
+                    </div>
+                </div>
+                <div class="culture-item">
+                    <i>🍲</i>
+                    <div class="culture-text">
+                        <h3>Cuisine</h3>
+                        <p>Savor the delectable Bengali cuisine known for its subtle flavors, fish preparations, sweets like Rasgulla and Sandesh, and the unique five-spice blend called Panch Phoron.</p>
+                    </div>
+                </div>
+                <div class="culture-item">
+                    <i>🎵</i>
+                    <div class="culture-text">
+                        <h3>Music & Dance</h3>
+                        <p>From classical Rabindra Sangeet to folk traditions like Baul music and dance forms like Chhau and Kathak, West Bengal offers a rich performing arts heritage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Tips Section -->
+    <section class="travel-tips" id="tips">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Travel Tips</h2>
+                <p>Essential information for planning your trip to West Bengal</p>
+            </div>
+            <div class="tips-container">
+                <div class="tip-item">
+                    <h3>Best Time to Visit</h3>
+                    <p>October to March is the ideal time to visit West Bengal. The weather is pleasant and most of the festivals take place during this period. Summers (April to June) are hot and humid, while monsoons (July to September) bring heavy rainfall.</p>
+                </div>
+                <div class="tip-item">
+                    <h3>How to Reach</h3>
+                    <p>Netaji Subhas Chandra Bose International Airport in Kolkata connects the state to major cities in India and abroad. West Bengal is well-connected by railway networks and roadways. The state also has waterways connecting to Bangladesh.</p>
+                </div>
+                <div class="tip-item">
+                    <h3>Local Transportation</h3>
+                    <p>In Kolkata, you can use the metro, trams, buses, auto-rickshaws, and the iconic yellow taxis. In other parts of the state, buses, shared jeeps, and cycle rickshaws are common modes of transportation.</p>
+                </div>
+                <div class="tip-item">
+                    <h3>Accommodation</h3>
+                    <p>From luxury hotels to budget guesthouses, West Bengal offers a wide range of accommodation options. In Kolkata, you'll find international hotel chains, while hill stations like Darjeeling offer charming colonial-era properties and homestays.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container" id="contact">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Tour My India</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Travel Blog</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Popular Destinations</h3>
+                    <ul>
+                        <li><a href="#">Rajasthan</a></li>
+                        <li><a href="#">Kerala</a></li>
+                        <li><a href="#">Goa</a></li>
+                        <li><a href="#">Himachal Pradesh</a></li>
+                        <li><a href="#">Uttarakhand</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>West Bengal</h3>
+                    <ul>
+                        <li><a href="#">Kolkata Tourism</a></li>
+                        <li><a href="#">Darjeeling Tourism</a></li>
+                        <li><a href="#">Sundarbans Tourism</a></li>
+                        <li><a href="#">Dooars Tourism</a></li>
+                        <li><a href="#">West Bengal Tour Packages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Stay Connected</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Tour My India. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

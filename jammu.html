@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jammu & Kashmir Tourism - Tour My India</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .main-nav li {
+            margin-left: 20px;
+        }
+        
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .main-nav a:hover {
+            color: #ff6b00;
+        }
+        
+        /* Hero section */
+        .hero {
+            height: 500px;
+            background-image: url('/Major\ Project/images/kashmir.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b00;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #e55e00;
+        }
+        
+        /* Main content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-heading h2 {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .section-heading p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        /* About section */
+        .about-section {
+            margin-bottom: 60px;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .about-content p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        /* Destinations section */
+        .destinations-section {
+            margin-bottom: 60px;
+        }
+        
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .destination-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .destination-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .card-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: #ff6b00;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        /* Culture section */
+        .culture-section {
+            margin-bottom: 60px;
+            background-color: #f0f5f9;
+            padding: 50px 20px;
+        }
+        
+        .culture-section .container {
+            padding: 0;
+        }
+        
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .culture-item {
+            display: flex;
+            align-items: flex-start;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .culture-item i {
+            font-size: 2rem;
+            color: #ff6b00;
+            margin-right: 20px;
+        }
+        
+        .culture-text h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .culture-text p {
+            color: #666;
+        }
+        
+        /* Travel tips section */
+        .travel-tips {
+            margin-bottom: 60px;
+        }
+        
+        .tips-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .tip-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .tip-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .tip-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .tip-item p {
+            color: #666;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            text-decoration: none;
+            color: #aaa;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: #ff6b00;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .about-grid,
+            .culture-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .main-nav {
+                margin-top: 15px;
+            }
+            
+            .main-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .main-nav li {
+                margin: 5px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#"><img src="/Major Project/images/My logo.png" alt="Tour My India Logo"></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#destination">Destinations</a></li>
+                    <!-- <li><a href="#">Tours</a></li> -->
+                    <li><a href="#culture">Culture</a></li>
+                    <li><a href="#tips">Travel Tips</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Discover Paradise on Earth</h1>
+            <p>Land of pristine valleys, majestic Himalayas, serene lakes, and vibrant culture</p>
+            <a href="#" class="cta-button">Explore Packages</a>
+        </div>
+    </section>
+
+    <!-- About jammu & kashmir Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>About Jammu & Kashmir</h2>
+                <p>Experience the crown jewel of India with breathtaking landscapes and rich heritage</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="/Major Project/images/kashmir2.png" alt="West Bengal Landscape">
+                </div>
+                <div class="about-content">
+                    <h3>Heaven on Earth</h3>
+                    <p>Nestled in the Himalayan mountains, Jammu & Kashmir is India's northernmost state offering unparalleled natural beauty. From the snow-capped peaks of Gulmarg to the tranquil waters of Dal Lake, this region promises unforgettable experiences.</p>
+                    <p>Srinagar, the summer capital, is famous for its houseboats and Mughal gardens. The region boasts a unique cultural heritage influenced by Hindu, Buddhist, and Islamic traditions, reflected in its architecture, festivals, and way of life.</p>
+                    <p>With its alpine meadows, pristine lakes, thrilling adventure sports, and warm hospitality, Jammu & Kashmir remains one of India's most sought-after tourist destinations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Destinations Section -->
+    <section class="destinations-section" id="destination">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Top Destinations</h2>
+                <p>Explore the breathtaking landscapes and cultural treasures of Jammu & Kashmir</p>
+            </div>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="/Major Project/images/dal lake.png" alt="Srinagar">
+                    </div>
+                    <div class="card-content">
+                        <h3>Srinagar</h3>
+                        <p>Venice of the East with iconic houseboats, Mughal gardens, and the stunning Dal Lake.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="/Major Project/images/gulmarg.png" alt="Gulmarg">
+                    </div>
+                    <div class="card-content">
+                        <h3>Gulmarg</h3>
+                        <p>World-class skiing destination with the highest gondola ride in Asia and alpine meadows.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="/Major Project/images/pahalgam.png" alt="Pahalgam">
+                    </div>
+                    <div class="card-content">
+                        <h3>Pahalgam</h3>
+                        <p>Picturesque valley known as the 'Valley of Shepherds' and base for Amarnath Yatra.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="/Major Project/images/ladakh.png" alt="Leh-Ladakh">
+                    </div>
+                    <div class="card-content">
+                        <h3>Leh-Ladakh</h3>
+                        <p>High-altitude desert landscape with Buddhist monasteries and thrilling adventure routes.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="/Major Project/images/sonamarg.png" alt="Sonamarg">
+                    </div>
+                    <div class="card-content">
+                        <h3>Sonamarg</h3>
+                        <p>Gateway to the Himalayas with glaciers, trekking routes, and the Thajiwas Glacier.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="/Major Project/images/kargil.png" alt="Patnitop">
+                    </div>
+                    <div class="card-content">
+                        <h3>Patnitop</h3>
+                        <p>Scenic hill station offering panoramic views of the Chenab basin and pine forests.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="culture-section" id="culture">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Culture & Heritage</h2>
+                <p>Discover the unique cultural blend that defines Jammu & Kashmir</p>
+            </div>
+            <div class="culture-grid">
+                <div class="culture-item">
+                    <i>🎭</i>
+                    <div class="culture-text">
+                        <h3>Arts & Literature</h3>
+                        <p>Renowned for Pashmina shawls, hand-knotted carpets, paper-mâché products, and exquisite walnut wood carving.</p>
+                    </div>
+                </div>
+                <div class="culture-item">
+                    <i>🎊</i>
+                    <div class="culture-text">
+                        <h3>Festivals</h3>
+                        <p>Vibrant celebrations like Tulip Festival, Hemis Festival, Lohri, and the famous Shikara Festival on Dal Lake.</p>
+                    </div>
+                </div>
+                <div class="culture-item">
+                    <i>🍲</i>
+                    <div class="culture-text">
+                        <h3>Cuisine</h3>
+                        <p>Savor Wazwan feasts, Rogan Josh, Yakhni, and Kahwa tea - a blend of green tea with spices and almonds.</p>
+                    </div>
+                </div>
+                <div class="culture-item">
+                    <i>🎵</i>
+                    <div class="culture-text">
+                        <h3>Music & Dance</h3>
+                        <p>Jammu & Kashmir boasts a rich cultural heritage of music and dance. Traditional **Chakri** and **Sufiana Kalam** are popular music forms, often accompanied by instruments like the Rabab and Santoor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Tips Section -->
+    <section class="travel-tips" id="tips">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Travel Tips</h2>
+                <p>Essential information for planning your trip to Jammu & Kashmir</p>
+            </div>
+            <div class="tips-container">
+                <div class="tip-item">
+                    <h3>Best Time to Visit</h3>
+                    <p>April to October for pleasant weather and sightseeing. December to February for winter sports in Gulmarg. Ladakh is best visited June-September.</p>
+                </div>
+                <div class="tip-item">
+                    <h3>How to Reach</h3>
+                    <p>Major airports in Srinagar, Jammu, and Leh. Well-connected by road via NH44. Jammu Tawi is the main railway station. Domestic permits required for some areas.</p>
+                </div>
+                <div class="tip-item">
+                    <h3>Local Transportation</h3>
+                    <p>Taxi services available between major towns. Shikaras for lake transportation. Local buses and shared jeeps for inter-city travel.</p>
+                </div>
+                <div class="tip-item">
+                    <h3>Accommodation</h3>
+                    <p>Choose from luxury houseboats, heritage hotels, ski resorts, and budget guesthouses. Book in advance during peak seasons.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container" id="contact">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Tour My India</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Travel Blog</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Popular Destinations</h3>
+                    <ul>
+                        <li><a href="#">Jammu & Kashmir</a></li>
+                        <li><a href="#">Kerala</a></li>
+                        <li><a href="#">Goa</a></li>
+                        <li><a href="#">Himachal Pradesh</a></li>
+                        <li><a href="#">Uttarakhand</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Jammu & kashmir</h3>
+                    <ul>
+                        <li><a href="#">Srinagar Tourism</a></li>
+                        <li><a href="#">Gulmarg Tourism</a></li>
+                        <li><a href="#">Sonmarg Tourism</a></li>
+                        <li><a href="#"> Leh-Ladakh Tourism</a></li>
+                        <li><a href="#">Jammu & Kashmir Tour Packages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Stay Connected</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Tour My India. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
