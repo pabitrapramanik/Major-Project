@@ -1,0 +1,264 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.navft{
+    font-size: 20px;
+}
+.icons{
+    font-size: 26px;
+    
+}
+.carousel-item img{
+    width: 100%;
+    height: 100vh;
+}
+.carousel-caption{
+    position: absolute;
+    width: 10%;
+    top: 40%;
+}
+.para{
+    font-size: 20px;
+}
+
+.places-carousel {
+    display: flex;
+    justify-content:end ;
+    gap: 15px;
+    position: absolute;
+    bottom: 5%;
+    /* left: 75%; */
+    right: 0%;
+    transform: translateY(-50%);
+}
+
+.place-card {
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+.place-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* -------------middle content of page---------- */
+
+ body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    /* margin: 0;
+    padding: 0; */
+}
+
+ .hero{
+    padding: 40px;
+} 
+
+h1,h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    gap: 15px;
+}
+p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+.search-box input {
+    padding: 10px;
+    width: 200px;
+    border: 2px solid rgb(141, 141, 173);
+    border-radius: 5px;
+}
+.search-box button {
+    background-color: rgb(90, 90, 152);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.search-box button img {
+    width: 16px;
+    height: 16px;
+}
+
+.row1 {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+} 
+.carda{
+    position: relative;
+    width: 150px;
+    height: 180px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+} 
+ .carda img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} 
+ .carda span{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+.hidden {
+    display: none;
+}
+.see-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* display: block; */
+    margin-top: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+} 
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 200px; */
+}
+
+#ex{
+    cursor: pointer;
+}
+
+.trip-btn{
+    top: 600px;
+}
+
+/* ------------------footer--------------- */
+.ft{
+    display: flex;
+    justify-content: space-around;
+}
+.em{
+    background-color: black;
+    border-radius: 10px;
+}
+.em input{
+    color: #fff;
+    background-color: #000;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 15px;
+    margin: 5px;
+    font-weight: bold;
+}
+.em button{
+    color: #fff;
+    background-color: rgb(129, 126, 126);
+    outline: none;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.ft a{
+    margin: 10px;
+    font-size: 22px;
+}
+#insta{
+    color: #FD1D1D;   
+} 
+
+/* ----------------responsiveness--------------- */
+
+/* for tab 768px */
+
+ @media (max-width:768px){
+    .places-carousel{
+        /* left: 50%; */
+    }
+    .place-card{
+        width: 100px;
+        height: 150px;
+    }
+    .carda{
+        width: 150px;
+        height: 150px;
+    } 
+    .ft h4{
+        font-size: 20px;
+    }
+    .carousel-item h1{
+        font-size: 20px;
+    }
+    .carousel-item p{
+        font-size: 14px;
+    }
+    .hero h1,h2{
+        font-size: 18px;
+    }
+} 
+
+/* for 425px mobile */
+
+@media (max-width:425px) {
+    .carousel-item img{
+        width: 100%;
+        height: 60vh;
+    }
+    .em{
+        background-color: transparent;
+    }
+    .em input{
+        font-size: 5px;
+        border-radius: 2px;
+        font-weight: bold;
+    }
+    .em button{
+        display: none;
+    }
+    .ft a{
+        font-size: 10px;
+        margin: 0px;
+    }
+    .trip-btn{
+        width: 100px;
+        height: 30px;
+    }
+    .trip-btn button{
+        font-size: 9px;
+    }
+    .ft h4{
+        font-size: 10px;
+    }
+    .ft p{
+        font-size: 8px;
+    }
+    .ft a{
+        margin: 5px;
+        font-size: 12px;
+        gap: 15px;
+    }
+}

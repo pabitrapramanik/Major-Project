@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- ----------custom css---------- -->
+    <link rel="stylesheet" href="home.css">
+    <!-- --------------bootstrap css link-------------- -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- --------------fontawesome link-------------- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+  <!-- ----------nav bar-------- -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+              <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Friends Company</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                </div>
+                <div class="container">
+                  <div class="collapse navbar-collapse navft" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Place
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="/Major Project/States/wb.html">West Bengal</a></li>
+                          <li><a class="dropdown-item" href="/Major Project/States/maharastra.html">Maharashtra</a></li>
+                          <li><a class="dropdown-item" href="/Major Project/States/jammu.html">Jammu & Kashmir</a></li>
+                          <li><a class="dropdown-item" href="/Major Project/States/delhi.html">Delhi</a></li>
+                          <li><a class="dropdown-item" href="#">Uttarakhand </a></li>
+                          <li><a class="dropdown-item" href="#">Andhra Pradesh</a></li>
+                          <!-- <li><a class="dropdown-item" href="#">Madhya Pradesh</a></li> -->
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">See more</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="admin.html">Admin</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#footer">Contact Us</a>
+                      </li>
+                    </ul>
+                  </div>
+                 <a href="singin.html"><button type="button" class="btn btn-outline-dark me-5">Sing In</button></a>
+                </div>
+              </nav>  
+            </div>
+        </div>
+    </div>
+    
+    <!-- -----------banner part carousel images------------- -->
+    
+    
+  <div id="carouselExampleDark" class="container-fluid carousel carousel-dark slide" data-bs-ride="carousel" id="banner">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="1000">
+        <img src="images/image1.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-md-block text position-absolute w-50 ">
+          <h5>Leh-Ladhak</h5>
+          <h1>Pangong Lake</h1>
+          <p class="para">Pangong Lake also known <br> as Pangong Tso is a high altitute saltwater <br>
+             lake located in the Himalayas at an <br> elevation of 4350 meter above sea level </p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="300">
+        <img src="images/image2.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-md-block text-white position-absolute w-50">
+          <h5>Sikkim</h5>
+          <h1>Buddha park</h1>
+          <p class="para">The Mahabodhi Temple in Bodh Gaya, India, is a significant Buddhist pilgrimage site where Gautama Buddha is said to have attained enlightenment, and it's a UNESCO World Heritage site.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/Alwar city palace.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-md-block text position-absolute w-50">
+          <h5>Rajasthan</h5>
+          <h1>Alwar City Palace</h1>
+          <p class="para">Build in the 18th century, this magnificent <br> fort in located in the foothills of Aravalli, right below Bala Quila. <br> The fort is a perfect blend of Mughal and Rajput architecture. <br> There is an artificial lake within the vicinity of City Palace, <br> which was built by Maharaja Vinay Singh in 1815..</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/taj mahal.png" class="d-block w-100" alt="..." id="taj">
+        <div class="carousel-caption d-md-block text position-absolute w-50">
+          <h5>Agra</h5>
+          <h1>Taj Mahal</h1>
+          <p class="para">The Taj Mahal is an ivory-white marble mausoleum <br> on the south bank of the Yamuna river in the Indian city of Agra. <br> It was commissioned in 1632 by the Mughal emperor, <br> Shah Jahan (reigned from 1628 to 1658), to house the tomb of his favourite wife, Mumtaz Mahal.</p>
+        </div>
+      </div>
+
+    </div>
+
+      <!-- Small Places Carousel -->
+      <div class="places-carousel active container-fluid" data-bs-interval="1000" >
+        <div class="place-card active">
+            <img src="/Major Project/images/image1.png" alt="Mussoorie">
+            <!-- <div class="overlay">Uttarakhand - Mussoorie</div> -->
+        </div>
+        <div class="place-card">
+            <img src="/Major Project/images/image2.png" alt="Buddha Park">
+            <!-- <div class="overlay">Sikkim - Buddha Park</div> -->
+        </div>
+        <div class="place-card">
+            <img src="/Major Project/images/Alwar city palace.png" alt="Kongwattan Valley">
+            <!-- <div class="overlay">Jammu & Kashmir - Kongwattan Valley</div> -->
+        </div>
+        <div class="place-card">
+          <a href="#taj" id="taj"><img src="/Major Project/images/taj mahal.png" alt="Kongwattan Valley"></a>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+<!-- --------------middile content of home page   or find the best destination---------------- -->
+
+<section class="hero mt-3 container-fluid">
+  <h1>Find <strong>Your Best</strong> Destination</h1><hr class="w-25 m-auto mb-3">
+  <div class="search">
+    <form class="d-flex " role="search">
+      <input class="form-control me-2" id="lol" type="search" placeholder="Search" aria-label="Search">
+      <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+    </form>
+  </div> <br>
+  <p>We have more than 1 destinations you can choose</p>
+  <div class="card-container">
+      <div class="row1">
+          <div class="carda"> <img src="images/dal lake.png" alt="dal lake"> <span>Dal Lake</span> </div>
+          <div class="carda"> <img src="images/golden temple.jpg" alt="golden temple"> <span>Golden Temple</span> </div>
+          <div class="carda"> <img src="images/taj mahal.png" alt="Taj Mahal"> <span>Taj Mahal</span> </div>
+          <div class="carda"> <img src="images/nainital.png" alt="nainital"> <span>Nainital</span> </div>
+      </div>
+      <div class="row1 hidden mt-3" id="extra-cards">
+          <div class="carda"> <img src="images/hawa mahal.jpg" alt="hawa mahal"> <span>Hawa Mahal</span> </div>
+          <div class="carda"> <img src="images/manali.png" alt="Manali"> <span>Manali</span> </div>
+          <div class="carda"> <img src="images/somnath temple.png" alt="somnath temple"> <span>Somnath Temple</span> </div>
+          <div class="carda"> <img src="images/marine drive.png" alt="marine drive"> <span>Marine Drive</span> </div>
+      </div>
+  </div>
+  <a id="toggle-more" class="see-more">See more</a><hr class="w-25 m-auto">
+</section>
+<section class="vacations mt-3">
+  <h2><strong>Best vacations</strong> Plans</h2><hr class="w-25 m-auto">
+  <p>Plan your perfect vacation with our friends company. Choose hundreds of all-inclusive offers!</p>
+  <div class="card-container">
+      <div class="row1">
+          <div class="carda"> <img src="images/chirakoot.png" alt="chirakoot"> <span>WaterFall</span> </div>
+          <div class="carda"> <img src="images/khajuraho.png" alt="khajuraho temple"> <span>Khajuraho</span> </div>
+          <div class="carda"> <img src="images/victoria.png" alt="victorial"> <span>Victorial</span> </div>
+          <div class="carda"> <img src="images/nalanda.png" alt="nalanda university"> <span>Nalanda</span> </div>
+      </div>
+      <div class="row1 hidden mt-3" id="extra-vacation-cards">
+          <div class="carda"> <img src="images/baga beach.png" alt="Goa"> <span>Goa</span> </div>
+          <div class="carda"> <img src="images/charminar.png" alt="charminar"> <span>Charminar</span> </div>
+          <div class="carda"> <img src="images/araku valley.png" alt="araku valley"> <span>Araku Valley</span> </div>
+          <div class="carda"> <img src="images/darjeeling.png" alt="Darjeeling"> <span>Darjeeling</span> </div>
+      </div>
+  </div>
+  <a id="toggle-vacations" class="see-more">See more</a><hr class="w-25 m-auto mb-5">
+</section>
+
+
+
+
+<!-- ------------------------second middile section------------------ -->
+<section class="second middile">
+  <div class="container-fluid">
+    <div class="row justify-content-center my-3">
+      <div class="col-md-4"><img src="images/new taj 2.png" alt="Taj Mahal" class="img-fluid img-thumnail rounded  p-2"></div>
+      <div class="col-md-6 fs-4 text-center mt-4"><b>Beautiful Agra Let's travel</b> <br>
+        <br>The Taj Mahal is an ivory-white marble mausoleum located on the right bank of the river Yamuna in Agra, Uttar Pradesh, India. It was commissioned in 1631 by the fifth Mughal emperor, Shah Jahan, to house the tomb of his beloved wife, Mumtaz Mahal, who died in 1631.15.</div>
+    </div>
+
+    <div class="row justify-content-center my-3">
+      <div class="col-md-6 fs-4 text-center pt-5"><b>We Make World travel Easy</b>
+        <br><br>
+        Navigate the global effortlessly, we transform wanderlust dreams into seamless adventure, with us the world becomes your accessible playground, travel simplified.
+        <br><br>
+        <b><u id="ex">Explore More</u></b></div>
+
+        <div class="col-md-4"><img src="images/rajasthan 2.png" alt="Taj Mahal" class="img-fluid img-thumnail rounded  p-2"></div>
+    </div>
+  </div>
+</section>
+
+
+         <!-- Sticky Button (Aligned to Right) -->
+    <div class="position-fixed end-0  translate-middle-y me-3 trip-btn">
+      <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#quoteModal">
+        <i class="fa-solid fa-location-dot"></i> Plan Your Trip
+      </button>
+  </div>
+
+  <!-- Quote Modal -->
+  <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="quoteModalLabel">Request a <span class="text-warning">QUOTE</span></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <div class="row">
+                      <!-- Left Side - Instructions -->
+                      <div class="col-md-5">
+                          <h3>How It Works</h3>
+                          <ul>
+                              <li>Tell us details of your holiday plan.</li>
+                              <li>Our experts will get back to you within 24 hours.</li>
+                              <li>Get a customized package and start your journey!</li>
+                          </ul>
+                          <p>📞 Call us for details: <b class="text-danger">+91-9212777225</b></p>
+                      </div>
+
+                      <!-- Right Side - Form -->
+                      <div class="col-md-7">
+                          <form>
+                              <div class="mb-2">
+                                  <label class="form-label">Full Name*</label>
+                                  <input type="text" class="form-control" placeholder="Your name">
+                              </div>
+                              <div class="mb-2">
+                                  <label class="form-label">Email ID*</label>
+                                  <input type="email" class="form-control" placeholder="Email">
+                              </div>
+                              <div class="mb-2">
+                                  <label class="form-label">Tour Description*</label>
+                                  <textarea class="form-control" placeholder="Enter Your Tour Description"></textarea>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-6 mb-2">
+                                      <label class="form-label">Travel Dates*</label>
+                                      <input type="date" class="form-control">
+                                  </div>
+                                  <div class="col-md-6 mb-2">
+                                      <label class="form-label">Duration of Stay*</label>
+                                      <input type="text" class="form-control" placeholder="Duration">
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-6 mb-2">
+                                      <label class="form-label">No. of Persons*</label>
+                                      <input type="number" class="form-control" placeholder="Number of Persons">
+                                  </div>
+                                  <div class="col-md-6 mb-2">
+                                      <label class="form-label">Contact No*</label>
+                                      <input type="tel" class="form-control" placeholder="Contact Number">
+                                  </div>
+                              </div>
+                              <button type="submit" class="btn btn-success w-100 mt-2">Submit</button>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+<!-- ---------footer section ---- -->
+<div class="container-fluid bg-dark text-white p-2 " id="footer">
+  <div class="row">
+    <div class="col-12">
+      <div class="ft mt-4">
+        <h4>Power By</h4>
+        <h4>Cell Center</h4>
+        <h4>Subscribe to our newsletters</h4>
+        <h4>Download our app</h4>
+      </div>
+      <div class="ft my-3">
+        <p>Friends Com</p>
+        <p>+915365256985</p>
+        <div class="em">
+          <input type="email" placeholder="Email"><button>Join Now</button>
+        </div>
+        <p id=""></p><p></p>
+      </div> <hr>
+      <div class="ft">
+        <p>Privacy Policy</p>
+        <p>Cookies</p>
+        <p><i class="fa fa-copyright text-white p-2"></i>2025 copyright</p>
+        <p>Contact Us
+          <a href="#" title="instagram" id="insta"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" title="facebook"><i class="fa-brands fa-facebook"></i></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
